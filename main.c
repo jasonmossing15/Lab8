@@ -5,9 +5,9 @@
 int leftSensorValue;
 int centerSensorValue;
 int rightSensorValue;
-int twoInLeft = 0x260;
-int twoInRight = 0x260;
-int fourInCenter = 0x358;
+int twoInLeft = 0x265;
+int closeLeft = 0x310;
+int fourInCenter = 0x303;
 
 /*
  * main.c
@@ -18,17 +18,20 @@ int main(void) {
     initializeADC10();
 
     for(;;){
-    leftSensorValue = getLeftSensorValue();
-    centerSensorValue = getCenterSensorValue();
-    rightSensorValue = getRightSensorValue();
-    if(leftSensorValue > twoInLeft){
-    	veerRight();
-    }
-    else if(centerSensorValue > fourInCenter){
-    	smallRightTurn();
+
+    if(getLeftSensorValue() < twoInLeft){
+    	veerLeft();
+    	__delay_cycles(10000);
     }
     else{
-    	veerLeft();
+    	veerRight();
+    	__delay_cycles(10000);
+    }
+    if(getCenterSensorValue() > fourInCenter){
+    	moveMotorsBackward();
+    	__delay_cycles(10000);
+    	turnRight();
+    	__delay_cycles(100000);
     }
     }
 	return 0;

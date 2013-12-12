@@ -60,12 +60,12 @@ void initializePWM(){
 }
 
 void moveLeftMotorForward(){
-	TA0CCR1 = 50;
+	TA0CCR1 = 40;
 	TA1CCR2 = 0;
 }
 
 void moveRightMotorForward(){
-	TA1CCR1 = 50;
+	TA1CCR1 = 40;
 	TA1CCR2 = 0;
 }
 
@@ -82,15 +82,15 @@ void stopRightMotor(){
 void moveMotorsBackward(){
 	stopLeftMotor();
 	stopRightMotor();
-	TA1CCR2 = 50;
+	TA1CCR2 = 40;
 }
 
 void slowLeftMotor(){
-	TA0CCR1 = 30;
+	TA0CCR1 = 25;
 }
 
 void slowRightMotor(){
-	TA1CCR1 = 30;
+	TA1CCR1 = 25;
 }
 void smallLeftTurn(){
 	stopLeftMotor();
@@ -102,7 +102,7 @@ void smallLeftTurn(){
 void smallRightTurn(){
 	moveLeftMotorForward();
 	stopRightMotor();
-	__delay_cycles(450000);
+	__delay_cycles(350000);
 	moveRightMotorForward();
 }
 
@@ -135,5 +135,15 @@ void veerLeft(){
 
 void veerRight(){
 	slowRightMotor();
+	moveLeftMotorForward();
+}
+
+void turnLeft(){
+	stopLeftMotor();
+	moveRightMotorForward();
+}
+
+void turnRight(){
+	stopRightMotor();
 	moveLeftMotorForward();
 }

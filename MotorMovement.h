@@ -29,4 +29,8 @@ void veerLeft();
 
 void veerRight();
 
+void turnLeft();
+
+void turnRight();
+
 #endif /* MOTORMOVEMENT_H_ */

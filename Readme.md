@@ -20,4 +20,4 @@ The veer functions have one motor go forward at the normal speed and slow the th
 
 ## Documentation and License
 
-Anyone is allowed to use this code as long as you document. Caleb Ziegler helped me a lot on this assignment, so I suggest you just look at his. Here is a link to his [repo](https://gitub.com/czig/Lab8).
+Anyone is allowed to use this code as long as you document. Caleb Ziegler helped me a lot on this assignment, so I suggest you just look at his. Here is a link to his [repo](https://github.com/czig/Lab8).

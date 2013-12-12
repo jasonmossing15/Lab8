@@ -2,12 +2,8 @@
 #include "RobotSensors.h"
 #include "MotorMovement.h"
 
-int leftSensorValue;
-int centerSensorValue;
-int rightSensorValue;
-int twoInLeft = 0x265;
-int closeLeft = 0x310;
-int fourInCenter = 0x303;
+int twoInLeft = 0x273;
+int fourInCenter = 0x380;
 
 /*
  * main.c
@@ -29,9 +25,9 @@ int main(void) {
     }
     if(getCenterSensorValue() > fourInCenter){
     	moveMotorsBackward();
-    	__delay_cycles(10000);
+    	__delay_cycles(20000);
     	turnRight();
-    	__delay_cycles(100000);
+    	__delay_cycles(300000);
     }
     }
 	return 0;

@@ -1,6 +1,6 @@
 # Lab 8 - The Maze
 
-This library deals with the running the ECE382 Robot through a maze.
+This library deals with the running the ECE382 Robot through a maze. Also in order to add difficulty and character I put a speaker to make the robot "DJ Roomba".
 
 ## Concepts Needed
 
